@@ -1,0 +1,81 @@
+.parallax-container {
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  height: 100vh;
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text {
+  font-family: 'Franklin Gothic Medium';
+  color: #ffffff;
+}
+
+.form {
+  outline: none;
+  margin-top: 20px;
+}
+
+.todo-item {
+  list-style: none;
+}
+
+input[type="text"] {
+  width: 200px;
+  padding: 8px;
+  border-radius: 14px;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+  background-color: rgb(215, 241, 131);
+  color: #ffffff;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 14px;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+  background-color: rgb(215, 241, 131);
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #f0e68c;
+}

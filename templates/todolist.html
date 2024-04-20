@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'stylesheets.css' %}" type="text/css">
+</head>
+<body>
+    <div class="parallax-container">
+        <div class="parallax"></div>
+    <div class="image-container">
+        <img class="img" src="{% static 'img/image.jpg' %}" alt="Background Image">
+        <div class="overlay-content">
+            <div class="text" contenteditable>HELLO WORLD</div>
+            <div class="form">
+                <ul>
+                    {% for i in all_items %} 
+                    <li class="todo-item">{{ i.content }}
+                        <form class="btn" action="/deleteTodoItem/{{ i.id }}/" method="post">{% csrf_token %}
+                            <input type="submit" value="Удалить">
+                        </form>          
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <form class="add-form" action="/addTodoItem/" method="post">{% csrf_token %}
+                <input type="text" name="content" placeholder="Новый элемент списка">
+                <input type="submit" value="Добавить">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
